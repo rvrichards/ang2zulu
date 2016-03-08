@@ -1,0 +1,12 @@
+<div class="panel panel-primary">
+  <div class="panel-heading" ng-click="collapse()" >{{job.name}}</div>
+  <div class="panel-body" ng-hide="collapsed" >
+    <h4>Tasks:</h4>
+    <ul>
+      <li ng-repeat='task in job.tasks'>
+        {{task}}
+      </li>
+    </ul>
+  </div>
+</div>
+
