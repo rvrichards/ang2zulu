@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="echo">
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="echo.js"></script>
+<body>
+  <h1 class="text-center" >Some AngularJS Two way Binding</h1>
+  <div ng-controller="index">
+    <div>
+      <p class="text-center">Type something: <input type="text" ng-model="something" /></p>
+      <p class="text-center">Angular two-way binding magic below</p>
+      <p class="text-center text-lowercase">{{something}} </p>
+      <p class="text-center text-uppercase">{{something}} </p>
+      <p class="text-center text-capitalize">{{something}} </p>
+    </div>
+    <div class="text-center">
+      Favorite character?
+      <select ng-model="yourHero">
+        <option value="Princess Zelda">Zelda</option>
+        <option value="Lonely Mountain">Smaug</option>
+        <option value="Thomas A. Anderson">Neo</option>
+        <option value="Montgomery Scott">Scotty</option>
+      </select>
+      Angular two-way binding magic comes here ===> {{yourHero}}
+    </div>
+
+    <div class="text-center">
+      How would you like the revolution to be shown?
+      <input type="radio" name="fc" value="Book" ng-model="radioGaGa">Book</input>
+      <input type="radio" name="fc" value="Radio" ng-model="radioGaGa">Radio</input>
+      <input type="radio" name="fc" value="TV" ng-model="radioGaGa">TV</input>
+      <input type="radio" name="fc" value="Hologram" ng-model="radioGaGa">Hologram</input>
+      <p class="text-center text-capitalize" >
+        <span class="glyphicon glyphicon-arrow-right"></span><strong>{{radioGaGa}}</strong><span class="glyphicon glyphicon-arrow-left"></span></p>
+    </div>
+  </div>
+</body>
+
+</html>
