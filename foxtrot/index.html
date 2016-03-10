@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <script src="foxtrot.js"></script>
+  </head>
+
+  <body>
+    <div class="container" ng-app="classApp" ng-controller="mainCtrl">
+        <h2>ngModel Examples</h2>
+        <form>
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="error"> Use class ".text-error"</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="upper"> Use class "text-uppercase"</label>
+          </div>
+        </form>
+
+        <div>
+          <h2 ng-class="{ 'text-danger': error, 'text-uppercase':upper }">
+            I Will Change
+          </h2>
+        </div>
+
+        <hr>
+        <!-- input box to toggle a variable to true or false -->
+        <form>
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="awesome"> Make green?</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="upper2"> Make UPPER?</label>
+          </div>
+        </form>
+        <!-- add the class 'text-success' if the variable 'awesome' is true -->
+        <div ng-class="{ 'text-uppercase': upper2,   'text-danger': danger,  'text-success': awesome }">
+          <h2>r0b was here</h2>
+        </div>
+    </div>
+  </body>
+
+</html>
