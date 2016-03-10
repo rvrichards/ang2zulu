@@ -7,8 +7,9 @@
   </head>
 
   <body>
-    <div class="container" ng-app="classApp" ng-controller="mainCtrl">
-        <h2>ngModel Examples</h2>
+    <div class="container" ng-app="foxApp" ng-controller="mainCtrl">
+        <h2>ngModel As Attribute</h2>
+        We'll choose the bootstrap classes by checkbox.
         <form>
           <div class="checkbox">
             <label><input type="checkbox" ng-model="error"> Use class ".text-error"</label>
@@ -19,25 +20,37 @@
         </form>
 
         <div>
-          <h2 ng-class="{ 'text-danger': error, 'text-uppercase':upper }">
-            I Will Change
-          </h2>
+          <p ng-class="{ 'text-danger': error, 'text-uppercase':upper }"> ======> Quelque chose ici </p>
         </div>
 
         <hr>
-        <!-- input box to toggle a variable to true or false -->
+
+        <h2>ngModel as Attribute or Class</h2>
+        We'll write the bootsrtap classes by hand. Note invalid ones are ignored.
+        <div class="ng-class:type;">Enter bootstrap class (text-danger, text-center, text-capitalize, small)</div>
+
         <form>
-          <div class="checkbox">
-            <label><input type="checkbox" ng-model="awesome"> Make green?</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" ng-model="upper2"> Make UPPER?</label>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Gimme a Class" ng-model="biteMe">
           </div>
         </form>
-        <!-- add the class 'text-success' if the variable 'awesome' is true -->
-        <div ng-class="{ 'text-uppercase': upper2,   'text-danger': danger,  'text-success': awesome }">
-          <h2>r0b was here</h2>
-        </div>
+        <p ng-class="biteMe"> ======> ngModel as attribute </p>
+        <p class="ng-class:biteMe;"> ======> ngModel as Class</p>
+
+        <hr>
+
+        <h2>Lastly</h2>
+        <p>This uses ngClass and as a bonus has a function call.</p>
+        <form>
+          <div class="form-inline">
+            <label>Doit (only accepts one class):</label><input type="text" class="form-control" ng-model="ouch">
+          </div>
+        </form>
+
+        <div class="ng-class:[ouch, biteMe];">Quelque chose ici</div>
+        <div ng-class="{'text-danger': isSmall()}">Moi aussi, will be RED only if you enter"small"</div>
+
+
     </div>
   </body>
 
