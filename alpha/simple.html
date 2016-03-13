@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+  </head>
+  <body>
+
+    <div ng-app="alpha" ng-controller="theController">
+
+      Libation: <input type="text" ng-model="libation"><br>
+      Company: <input type="text" ng-model="company">
+      <p>
+      Finally: {{libation + " by " + company}}
+
+    </div>
+
+    <script>
+      var app = angular.module('alpha', []);
+      app.controller('theController', function($scope) {
+          $scope.libation= "NoName";
+          $scope.company= "Acme Corp";
+      });
+    </script>
+
+  </body>
+</html>
+
+

@@ -1,5 +1,5 @@
 #Foxtrot
-
+##index.html
 Higlighting AngularJS directive: ngClass
 
 We are able to dynamically change css settings using **ngClass**. These examples treat ngClass as an attribute not a class. We'll enlist ngModel to help with this.
@@ -8,7 +8,7 @@ Here are the two ways of dynamically getting bootstrap styling. First we have a 
 
 Then we use this variable as follows:
 
-* &lt;p ng-class="biteMe"> ======> ngModel as attribute 
+* &lt;p ng-class="biteMe"> ======> ngModel as attribute
 * &lt; class="ng-class:biteMe;"> ======> ngModel as Class
 
 Finally, the last part also uses a function call to add a bootstrap class: 'text-danger' only if we set one class equal to "small".
@@ -24,3 +24,7 @@ Then we have the code:
 The **isSmall()** function is in the script file and looks like:
 
 > $scope.isSmall = function () { return $scope.ouch  === "small"; };
+
+
+##other.html
+This shows a simple way of changing background-colour and font-size for an input box. Uses **ng-init**.

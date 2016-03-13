@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="tangerine">
-
-  <head>
+<html>
     <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <script src="tangerine.js"></script>
-  </head>
+<body>
 
-  <body ng-controller="mainController" class="container">
-    <h2>The Tangerine Example</h2>
-    <task-list job="job1"></task-list>
-  </body>
+  <div ng-app="" >
+    <h1>The Alpha Example</h1>
+    <p>Enter something : <input type="text" ng-model="somerandomthing" placeholder="Enter something here"></p>
+    <h1>You entered -----> {{somerandomthing}}</h1>
+    As an "ng-bind" directive, strangely using the HTML "p" tag: <p ng-bind="somerandomthing"></p>
+    <p>The thing you entered is: <span ng-bind="somerandomthing"></span></p>
+    <p>Using AngularJS expressions: {{somerandomthing}}
+  </div>
 
+</body>
 </html>

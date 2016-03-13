@@ -1,5 +1,4 @@
-// We need this, even if it appears to do nothing
-// Keeps scope.
+// foxtrot.js.
 
 angular.module('foxApp', [])
 .controller('mainCtrl', ["$scope", function ($scope) {
