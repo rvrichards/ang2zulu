@@ -1,57 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html ng-app="foxtrot">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
-    <link   rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
     <script src="foxtrot.js"></script>
-  </head>
-
-  <body>
-    <div class="container" ng-app="foxApp" ng-controller="mainCtrl">
-        <h2>ngModel As Attribute</h2>
-        We'll choose the bootstrap classes by checkbox.
-        <form>
-          <div class="checkbox">
-            <label><input type="checkbox" ng-model="error"> Use class ".text-error"</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" ng-model="upper"> Use class "text-uppercase"</label>
-          </div>
-        </form>
-
-        <div>
-          <p ng-class="{ 'text-danger': error, 'text-uppercase':upper }"> ======> Quelque chose ici </p>
-        </div>
-
+<body>
+<div class="container">
+    <div ng-controller="foxtrotCtrl">
+        <h2>Filter example</h2>
+        <p>Letters to filter on:<input type="text" ng-model="letter"></p>
+        <ul>
+          <li ng-repeat="x in alphabet | filter:letter">
+            {{ x }}
+          </li>
+        </ul>
         <hr>
-
-        <h2>ngModel as Attribute or Class</h2>
-        We'll write the bootsrtap classes by hand. Note invalid ones are ignored.
-        <div class="ng-class:type;">Enter bootstrap class (text-danger, text-center, text-capitalize, small)</div>
-
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Gimme a Class" ng-model="biteMe">
-          </div>
-        </form>
-        <p ng-class="biteMe"> ======> ngModel as attribute </p>
-        <p class="ng-class:biteMe;"> ======> ngModel as Class</p>
-
-        <hr>
-
-        <h2>Lastly</h2>
-        <p>This uses ngClass and as a bonus has a function call.</p>
-        <form>
-          <div class="form-inline">
-            <label>Doit (only accepts one class):</label><input type="text" class="form-control" ng-model="ouch">
-          </div>
-        </form>
-
-        <div class="ng-class:[ouch, biteMe];">Quelque chose ici</div>
-        <div ng-class="{'text-danger': isSmall()}">Moi aussi, will be RED only if you enter"small"</div>
-
-
+        <h2>Filter & Sort</h2>
+        <strong>Click on table heading to sort</strong>
+        <table class="table table-condensed">
+            <tr>
+                <th ng-click="pickMe('name')">Name</th>
+                <th ng-click="pickMe('weight')">Weight (g)</th>
+                <th ng-click="pickMe('colour')">Colour</th>
+            </tr>
+            <tr ng-repeat="x in libations | orderBy:columnToOrderOn">
+                <td>{{x.name}}</td>
+                <td>{{x.weight}}</td>
+                <td>{{x.colour}}</td>
+            </tr>
+        </table>
     </div>
-  </body>
+</div>
 
+</body>
 </html>

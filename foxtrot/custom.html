@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="foxtrot">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="foxtrot.js"></script>
+<body>
+<div class="container">
+    <div ng-controller="foxtrotCtrl">
+    <h2>Custom Filter</h2>
+    <strong>Capitalize all vowels</strong>
+      <li ng-repeat="x in alphabet">
+          {{x | customFormat}}
+      </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

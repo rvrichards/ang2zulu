@@ -8,3 +8,6 @@ Notice that we have not named the ng-app: **ng-app=""** We still need to have an
 
 ##simple.html
 Shows simple use of ng-app and ng-controller. The controller also has two variables that are used. It also uses inline scripts and not a script file.
+
+##scope.html
+Here I show rootScope and scope useage. You won't get much from the view but confirmation of what is described in the code.

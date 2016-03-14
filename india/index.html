@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style>
+input.ng-valid { background-color: green; }
+input.ng-invalid { background-color: yellow; }
+input.ng-empty { background-color: red; }
+input.ng-dirty { background-color: brown; }
+input.ng-touched { background-color: violet; }
+input.ng-pending { background-color: blue; }
+input.ng-not-empty { background-color: orange; }
+input.ng-pristine { background-color: lightblue; }
+</style>
+<body>
+<h1>Input Form Goodness</h1>
+<p>We will use the following styling:</p>
+<ul>
+  <li>ng-valid -- green</li>
+  <li>ng-invalid -- yellow</li>
+  <li>ng-empty -- red</li>
+  <li>ng-dirty -- brown</li>
+  <li>ng-touched -- violet</li>
+  <li>ng-pending -- blue</li>
+  <li>ng-not-empty -- orange</li>
+  <li>ng-pristine -- lightblue</li>
+</ul>
+Note that the order above determines what gets styled.
+<form ng-app="" name="myForm">
+    Enter your first name:    <input name="fName" ng-model="myfName" required> (has required attribute)<br>
+    Enter your last name:    <input name="lName" ng-model="mylName"  > <br>
+    Enter your age:    <input name="lName" ng-model="myAge" autofocus> (has autofocus attribute))
+</form>
+
+<p>Edit the text field and it will get/lose classes according to the status.</p>
+<p><b>Note:</b> A text field with the "required" attribute is not valid when it is empty.</p>
+
+</body>
+</html>

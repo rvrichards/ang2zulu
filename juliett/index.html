@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <script src="juliett.js"></script>
+  </head>
+
+  <body>
+    <div class="container" ng-app="juliettApp" ng-controller="mainCtrl">
+        <h2>ngModel As Attribute</h2>
+        We'll choose the bootstrap classes by checkbox.
+        <form>
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="error"> Use class ".text-error"</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="upper"> Use class "text-uppercase"</label>
+          </div>
+        </form>
+
+        <div>
+          <p ng-class="{ 'text-danger': error, 'text-uppercase':upper }"> ======> Quelque chose ici </p>
+        </div>
+
+        <hr>
+
+        <h2>ngModel as Attribute or Class</h2>
+        We'll write the bootsrtap classes by hand. Note invalid ones are ignored.
+        <div class="ng-class:type;">Enter one bootstrap class (text-danger, text-center, text-capitalize, small)</div>
+
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Gimme a Class" ng-model="biteMe">
+          </div>
+        </form>
+        <p ng-class="biteMe"> ======> ngModel as attribute </p>
+        <p class="ng-class:biteMe;"> ======> ngModel as Class</p>
+
+        <hr>
+
+        <h2>Lastly - Bonus Time</h2>
+        <p>A function call plus include the styling from above!</p>
+        <form>
+          <div class="form-inline">
+            <label>Doit (only accepts one class like: text-uppercase):</label><input type="text" class="form-control" ng-model="ouch">
+          </div>
+        </form>
+
+        <div class="ng-class:[ouch, biteMe];">Quelque chose ici</div>
+        <div ng-class="{'text-danger': isSmall()}">Moi aussi, will be RED only if you enter"small"</div>
+
+
+    </div>
+  </body>
+
+</html>

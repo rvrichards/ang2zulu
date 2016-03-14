@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+  </head>
+  <body ng-app="apple">
+
+  <h2>rootScope and scope</h2>
+  <h3>What are rootScope and scope favorite drinks?</h3>
+  <p>In regular HTML (ie in ng-app): {{libation}} </p>
+
+  <div ng-controller="appleCtrl">
+    <p>Inside a controllers scope: {{libation}} </p>
+  </div>
+
+  <p>Check the regular scope (inside ng-app) : {{libation}}</p>
+
+  <script>
+    var app = angular.module('apple', []);
+    app.run(function($rootScope) { $rootScope.libation = 'Aloe Vera Boisson'; });
+    app.controller('appleCtrl', function($scope) { $scope.libation = "Mango Surprise";  });
+  </script>
+
+  </body>
+</html>
