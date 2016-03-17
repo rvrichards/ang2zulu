@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<body>
+
+<div class="container">
+  <div ng-app="timeApp" ng-controller="timeCtrl">
+    <h2>Interval Service</h2>
+    <p>Using the <strong>$interval</strong> service, update the time every 2 seconds: {{theTime}}</p>
+  </div>
+</div>
+
+<script>
+var app = angular.module('timeApp', []);
+app.controller('timeCtrl', function($scope, $interval) {
+  $scope.theTime = new Date().toLocaleTimeString();
+  $interval(function () {
+      $scope.theTime = new Date().toLocaleTimeString();
+  }, 2000);
+});
+</script>
+
+</body>
+</html>

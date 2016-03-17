@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<body>
+  <div class="container">
+    <div ng-app="sierraApp" ng-controller="sierraCtrl">
+    <h1>Using AngularJS $http Service</h1>
+      <p>Reading from file "goodbye.txt" ...</p>
+      <h3> ====> {{fromHello}}</h3>
+    </div>
+
+    <script>
+      var app = angular.module('sierraApp', []);
+      app.controller('sierraCtrl', function($scope, $http) {
+        $http.get("goodbye.txt").then(function (response) {
+            $scope.fromHello = response.data;
+        });
+      });
+    </script>
+  </div>
+</body>
+</html>

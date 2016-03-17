@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<body>
+  <div class="container">
+    <div ng-app="myApp" >
+      <h2>Custom Service & Filter</h2>
+      <!-- not working input name="aNumber" ng-model="myNumber" required -->
+      <p>The answer is: ===>{{ 254 | myFormat}}</p>
+
+      <h3>In Future</h3>
+      <p>Link this to the number to filter on:</p>
+      <p>Enter number: <input type="number" ng-model="myNumber"> ==> {{ myNumber }}</p>
+    </div>
+
+
+    <script>
+    var app = angular.module('myApp', []);
+    app.service('hexafy', function() {
+        this.myFunc = function (x) {
+            return x.toString(16);
+        }
+    });
+    app.filter('myFormat',['hexafy', function(hexafy) {
+        return function(x) {
+            return hexafy.myFunc(x);
+        };
+    }]);
+
+    </script>
+  </div>
+</body>
+</html>

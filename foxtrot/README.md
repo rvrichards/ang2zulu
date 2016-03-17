@@ -8,3 +8,6 @@ This has two different filters, one is a "filter filter" and the other is an "or
 
 ##custom.html
 Make our own custom function to capitalize all vowels.
+
+##other.html
+We select a number of data points to display, and pick a starting number.

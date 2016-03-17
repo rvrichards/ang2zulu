@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="double">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<body>
+
+  <div class="container">
+    <div  ng-controller="doubleCtrl">
+      <h2>Some Services v1</h2>
+      <p>A few services: $http and $location</p>
+
+      <h3>Hello message ===> {{myWelcome}}</h3>
+      <h3>The URL: {{myUrl}}</h3>
+    </div>
+  </div>
+
+  <script>
+    var app = angular.module('double', []);
+    app.controller('doubleCtrl', ['$scope', '$http', function($scope, fromHello) {
+      $http.get("goodbye.txt").then(function (response) {
+              $scope.fromHello = response.data;
+      });
+      $scope.myUrl = $location.absUrl();
+      }]);
+  </script>
+
+</body>
+</html>

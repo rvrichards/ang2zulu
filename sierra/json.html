@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<body>
+
+<div ng-app="jApp" ng-controller="jCtrl">
+  <div class="container">
+    <h2>Students Final Marks</h2>
+    <table class="table table-condensed">
+      <tr>
+          <th>Index</th>
+          <th ng-click="pickMe('FirstName')">First Name</th>
+          <th ng-click="pickMe('LastName')">Last Name</th>
+          <th ng-click="pickMe('Grade')">Grade</th>
+      </tr>
+      <tr ng-repeat="x in data | orderBy:columnToOrderOn">
+          <td>{{ $index + 1 }}</td>
+          <td>{{x.FirstName}}</td>
+          <td>{{x.LastName}}</td>
+          <td>{{x.Grade}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script>
+  var app = angular.module('jApp', []);
+  app.controller('jCtrl', function($scope, $http) {
+    $scope.pickMe = function(x) { $scope.columnToOrderOn = x; };
+    $http.get("students.json").then(function (response) {
+        $scope.data = response.data.records;
+    });
+
+  });
+</script>
+
+</body>
+</html>

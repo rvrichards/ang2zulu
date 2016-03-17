@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="foxtrot">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="foxtrot.js"></script>
+<body>
+<div class="container">
+    <div ng-controller="foxtrotCtrl">
+        <h2>Filter example</h2>
+        <p>Number to display:<input type="text" ng-model="number1"></p>
+        <p>Number to start at:<input type="text" ng-model="number2"></p>
+        <ul>
+          <!-- li ng-repeat="x in alphabet | filter:letter" -->
+          <li ng-repeat="x in alphabet | limitTo : number1 : number2">{{x}}</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

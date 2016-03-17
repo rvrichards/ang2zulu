@@ -1,0 +1,49 @@
+{
+  "records": [
+    {
+      "FirstName": "Albert",
+      "LastName": "Victoria",
+      "Grade": "88"
+    },
+    {
+      "FirstName": "Bob",
+      "LastName": "Builder",
+      "Grade": "95"
+    },
+    {
+      "FirstName": "Candy",
+      "LastName": "Kane",
+      "Grade": "19"
+    },
+    {
+      "FirstName": "Dan",
+      "LastName": "Dimple",
+      "Grade": "72"
+    },
+    {
+      "FirstName": "Ed",
+      "LastName": "Hors",
+      "Grade": "71"
+    },
+    {
+      "FirstName": "Fred",
+      "LastName": "Flintstone",
+      "Grade": "100"
+    },
+    {
+      "FirstName": "Gertrude",
+      "LastName": "Gseundheist",
+      "Grade": "88"
+    },
+    {
+      "FirstName": "Hal",
+      "LastName": "3000",
+      "Grade": "22"
+    },
+    {
+      "FirstName": "Igneous",
+      "LastName": "Allumettes",
+      "Grade": "99"
+    }
+  ]
+}
