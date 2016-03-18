@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<body>
+  <div class="container">
+    <div ng-app="hotelApp" ng-controller="hotelCtrl">
+
+    <h3 ng-mousemove="mcount = mcount + 1" ng-click="clickFunction()">This counts how many times you move & click on me.</h3>
+    <p>We are up to {{ ccount }} clicks and {{ mcount }} movements!</p>
+    <hr>
+    <h3 ng-mousemove="xyFunction($event)">Using "ng-mousemove" with a function. Move on Me.</h3>
+    <p>The x & y coordinates of the mouse are: {{x + ', ' + y}}</p>
+
+  <script>
+    var app = angular.module('hotelApp', []);
+    app.controller('hotelCtrl', function($scope) {
+        $scope.mcount = 0;
+        $scope.ccount = 0;
+        $scope.clickFunction = function() {
+            $scope.ccount++;
+        };
+        $scope.xyFunction = function(event) {
+            $scope.x = event.clientX;
+            $scope.y = event.clientY;
+        };
+    });
+  </script>
+
+
+
+  </div>
+</body>
+</html>

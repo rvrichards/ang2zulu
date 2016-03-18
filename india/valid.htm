@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<body>
+<style>
+  input.ng-valid { background-color:springgreen; }
+  input.ng-invalid { background-color:tomato; }
+  input.ng-pristine { background-color:orange; }
+  form.ng-pristine { background-color:lightblue; }
+  form.ng-dirty { background-color:chartreuse ; }
+</style>
+
+  <div class="container">
+    <div ng-app="">
+    <h2>Form & Input State</h2>
+    <p>Input box colours conform to CSS set in HTML.</p>
+      <p>
+        <form name="emailForm">
+          Enter email: <input type="email" name="foo" ng-model="foo">
+        </form>
+      </p>
+      <p>The input box will start out blue for pristine.<br>
+         It will be chartreuse for dirty<br>
+      <p>The input form will start out orange for pristine.<br>
+         It will be tomato for invalid<br>
+         It will be springgreen for valid.</p>
+      <p><Strong>Testing field state</Strong></p>
+      <ul>
+        <li>$valid : {{emailForm.foo.$valid}}</li>
+        <li>$dirty : {{emailForm.foo.$dirty}}</li>
+        <li>$invalid : {{emailForm.foo.$invalid}}</li>
+        <li>$touched : {{emailForm.foo.$touched}}</li>
+        <li>$pristine : {{emailForm.foo.$pristine}} </li>
+        <li>$untouched : {{emailForm.foo.$untouched}}</li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
+</body>
+</html>
