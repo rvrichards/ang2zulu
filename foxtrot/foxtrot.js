@@ -19,7 +19,7 @@ app.controller('foxtrotCtrl', function($scope) {
 
 });
 
-// Out custom filter will capitalize all vowels, and lowercase everything else.
+// Our custom filter will capitalize all vowels, and lowercase everything else.
 app.filter('customFormat', function() {
     return function(x) {
         var i, c, txt = "",vowel="aeiouy";

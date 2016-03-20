@@ -11,14 +11,14 @@ A list of AngularJS snippets I have written, to help me learn
 * Golf    - Setting up a basic the value service.
 * Hotel   - Service - not working.
 * India   - Input goodness.
-* Juliett - Higlighting AngularJS directive: ngClass
-* Mike    -
+* Juliett - Changing css class settings, using ngClass.
+* Mike    - Using ng-include to include chunks of code.
 * November-
 * Oscar   -
 * Papa    -
 * Quebec  -
 * Romeo   -
-* Sierra  -
+* Sierra  - This will cover services.
 * Tango   -
 * Uniform -
 * Victor  -

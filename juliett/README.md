@@ -1,6 +1,6 @@
 #Juliett
 ##index.html
-Higlighting AngularJS directive: ngClass
+Changing css class settings, using ngClass.
 
 We are able to dynamically change css settings using **ngClass**. These examples treat ngClass as an attribute not a class. We'll enlist ngModel to help with this.
 

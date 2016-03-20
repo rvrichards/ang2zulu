@@ -1,0 +1,12 @@
+        <table class="table table-condensed">
+            <tr>
+                <th ng-click="pickMe('name')">Name</th>
+                <th ng-click="pickMe('weight')">Weight (g)</th>
+                <th ng-click="pickMe('colour')">Colour</th>
+            </tr>
+            <tr ng-repeat="x in libations | orderBy:columnToOrderOn">
+                <td>{{x.name}}</td>
+                <td>{{x.weight}}</td>
+                <td>{{x.colour}}</td>
+            </tr>
+        </table>
