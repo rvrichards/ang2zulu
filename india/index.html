@@ -28,11 +28,14 @@ Note that the order above determines what gets styled.
 <form ng-app="" name="myForm">
     Enter your first name:    <input name="fName" ng-model="myfName" required> (has required attribute)<br>
     Enter your last name:    <input name="lName" ng-model="mylName"  > <br>
-    Enter your age:    <input name="lName" ng-model="myAge" autofocus> (has autofocus attribute))
+    Enter your age:    <input name="age" ng-model="myAge" autofocus> (has autofocus attribute))
+
+    <p>Edit the text field and it will get/lose classes according to the status.</p>
+    <p><b>Note:</b> A text field with the "required" attribute is not valid when it is empty.</p>
+    <pre>{{ myForm | json }}</pre>
 </form>
 
-<p>Edit the text field and it will get/lose classes according to the status.</p>
-<p><b>Note:</b> A text field with the "required" attribute is not valid when it is empty.</p>
+
 
 </body>
 </html>

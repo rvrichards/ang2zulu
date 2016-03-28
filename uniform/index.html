@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="uniformApp">
+
+  <head>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="uniform.js"></script>
+  </head>
+
+  <body ng-controller="uniformCtrl" >
+    <div class="container">
+
+      <h3>Simple AngularJS Form Submit</h3>
+      <p>Using the basic <strong>ng-submit</strong> to submit a form.
+
+      <form name="theForm" ng-submit="onSubmit()" novalidate>
+        <div class="form-group" >
+          <label for="name" >Name</label >
+          <input type="text" class="form-control" ng-model="formModel.name" id="name" >
+        </div >
+
+      <div class="form-group" >
+        <label for="email" >Email</label >
+        <input type="email" class="form-control" ng-model="formModel.email"
+               id="email" name="email" required="required" >
+      </div >
+
+      <div class="form-group" >
+        <button class="btn btn-primary" type="submit" >Register </button >
+      </div >
+
+      <pre>FormModel: {{ formModel | json }}</pre>
+      <pre>TheForm: {{ theForm | json }}</pre>
+
+    </div>
+  </body>
+
+</html>

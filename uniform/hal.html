@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html  ng-app="halApp">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  </head>
+  <body>
+
+    <h1>Form Validation with ng-class </h1>
+    <p>This is a an Angularized HTML form, the basics won't be listed, just the new stuff</p>
+    <ul>
+      <li>The "City" input has a new attribute: name="citee". It will be added to the Form data.</li>
+      <li>This newly added attribute also has many attributes, like $validators, $valid, ...</li>
+      <li>If the form is not valid, don't submit. See: "onSubmit(theForm.$valid)" </li>
+      <li></li>
+
+    </ul>
+
+    <div ng-controller="galCtrl">
+
+      <form name="theForm" novalidate="novalidate">
+        <div ng-class>
+          City: <input type="text" id="city" name="citee" ng-model="formModel.myCity" required="required"><br>
+        </div>
+        Prov: <input type="text" id="prov" ng-model="formModel.myProv" ><br>
+        Sex:  <input type="radio" id="sex" ng-model="formModel.sexy" value="yea" ng-checked="true" > Yes
+              <input type="radio" id="sex" ng-model="formModel.sexy" value="no"> No
+              <input type="radio" id="sex" ng-model="formModel.sexy" value="other"> Other<br>
+        <button ng-click="onSubmit(theForm.$valid)">Submit SVP! </button ><br>
+        MyModel data (data appears as typed): <pre> {{ formModel | json }}</pre>
+        TheForm data: <pre> {{ theForm | json }}</pre>
+      </form>
+
+      <script>
+        var app = angular.module('halApp', []);
+
+        app.controller('halCtrl', function ($scope) {
+          $scope.formModel = {};
+
+          $scope.onSubmit = function (valid) {
+            if (valid) {
+              console.log("The submit was successfully done.");
+              console.log($scope.formModel);
+            } else {
+              console.log("Cannot submit, not valid.");
+            }
+
+            };
+        });
+      </script>
+    </div>
+
+  </body>
+
+</html>

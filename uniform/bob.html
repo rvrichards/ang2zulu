@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+
+    <h1>Simple HTML Form</h1>
+    <p>This is a basic HTML form, it has:</p>
+    <ul>
+      <li>A Form element with an "action" to perform something</li>
+      <li>The "action" uses "get", which is the default if omitted.</li>
+      <li>Three different Input elements: text, radio, and submit.</li>
+      <li>The "submit" will call the "action='doSomething.rb' defined in the form tag.</li>
+      <li>Currently the action does nothing, but you can see how it works.</li>
+    </ul>
+
+    <form action="doSomething.rb" method="get">
+      City: <input type="text"  name="city"><br>
+      Sex:  <input type="radio" name="sex" value="yes" checked> Yes
+            <input type="radio" name="sex" value="no"> No<br>
+      <input type="submit" value="Submit">
+    </form>
+
+  </body>
+
+</html>

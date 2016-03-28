@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html  ng-app="dansApp">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  </head>
+  <body>
+
+    <h1>HTML Form with Angular ng-click</h1>
+    <p>This is a an Angularized HTML form, using ng-click on an HTML button to call an Angular function: onSubmit </p>
+    <ul>
+      <li>The top HTML tag has:  ng-app="dansApp" to identify this as an angular infused app.</li>
+      <li>There is a script tag in the HEAD element to access the AngularJS binaries.</li>
+      <li>There is a script tag with local angular code in the BODY element</li>
+      <li>In the script file, we create an angular module named: "dansApp".</li>
+      <li>We need to set up an ng-controller to acess local angular code.</li>
+      <li>Two different Input elements: text and radio.</li>
+      <li>Each input element gets has: ng-model="MyModel.xxx" so Angular has access to it.</li>
+      <li>We print out "MyModel" at the end, in JSON format.</li>
+      <li>There is an Angularized submit button - uses ng-click. It calls angular function: onSubmit()</li>
+    </ul>
+
+    <div ng-controller="danCtrl"
+      <form name="myForm" novalidate="novalidate">
+        City: <input type="text" id="city" ng-model="formModel.myCity" ><br>
+        Prov: <input type="text" id="prov" ng-model="formModel.myProv" ><br>
+        Sex:  <input type="radio" id="sex" ng-model="formModel.sexy" value="yea" ng-checked="true" > Yes
+              <input type="radio" id="sex" ng-model="formModel.sexy" value="no"> No
+              <input type="radio" id="sex" ng-model="formModel.sexy" value="other"> Other<br>
+        <button ng-click="onSubmit()">SubmitMe! </button ><br>
+        MyModel data (data appears as typed): <pre> {{ formModel | json }}</pre>
+        MyForm  data (not working) : <pre> {{ myForm | json }}</pre>
+      </form>
+
+      <script>
+        var app = angular.module('dansApp', []);
+
+        app.controller('danCtrl', function ($scope) {
+          $scope.formModel = {};
+
+          $scope.onSubmit = function () {
+            console.log("The submit was successfully done.");
+            console.log($scope.formModel);
+            };
+        });
+      </script>
+    </div>
+
+  </body>
+
+</html>

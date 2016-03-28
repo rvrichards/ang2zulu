@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  ng-app="">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  </head>
+  <body>
+
+    <h1>Simple HTML Form with Angular</h1>
+    <p>This is a basic HTML form, with basic angular added. There is no submit, only a form and a displaying of values stored in that form.</p>
+    <ul>
+      <li>The top HTML tag has:  ng-app=""  ... to identify this as an angular infused app.</li>
+      <li>There is a script tag in the HEAD element to access the AngularJS binaries.</li>
+      <li>Two different Input elements: text and radio.</li>
+      <li>There is no submit ie: input type="submit" </li>
+      <li>We name the form ("MyForm"), so Angular has access to that data. </li>
+      <li>We print out "MyForm" at the end, in JSON format.</li>
+      <li>The attribute "checked" doesn't work with Angular, use: ng-checked="true"</li>
+      <li>If we omit ng-model="..." then we do not have access to that input data. (See prov)</li>
+    </ul>
+    <form name="myForm">
+      City: <input type="text" name="city"  ng-model="myCity" ><br>
+      Prov: <input type="text" name="prov"   ><br>
+      Sex:  <input type="radio" name="sex" ng-model="sexy" value="yea" ng-checked="true" > Yes
+            <input type="radio" name="sex" ng-model="sexy" value="no"> No
+            <input type="radio" name="sex" ng-model="sexy" value="other"> Other<br>
+      MyForm data: <pre> {{ myForm | json }}</pre>
+    </form>
+
+  </body>
+
+</html>
