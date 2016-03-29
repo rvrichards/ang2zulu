@@ -1,0 +1,103 @@
+<!-- <script src="../libs/angular-auto-validate/dist/jcs-auto-validate.min.js" ></script >   -->
+
+<!DOCTYPE html>
+<html  ng-app="joeApp">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://cdn.rawgit.com/jonsamwell/angular-auto-validate/master/dist/jcs-auto-validate.js"></script>
+  </head>
+  <body>
+  <div class="container">
+
+    <h1>Angular Validation Using Auto Validate</h1>
+    <p>This uses an open source package called <a href="https://github.com/jonsamwell/angular-auto-validate">Angular Auto Update</a> which says "... gets rid of excess html in favour of dynamic element modification to notify the user of validation errors. "</p>
+    <ul>
+      <li>Need to include "jcs-auto-validate.js" package.</li>
+      <li>Need to inject 'jcs-autoValidate' into Angular script module call.</li>
+      <li>Prov uses autoValidate standard error messages. </li>
+      <li>City and Age use autoValidate, but we add custom messages. </li>
+    </ul>
+
+    <div ng-controller="joeCtrl">
+
+      <form ng-submit="onSubmit()" name="theForm" novalidate="novalidate" class="form-inline" >
+        <div class="form-group" >
+          <label for="city" >City</label >
+          <input type="text"
+                 class="form-control"
+                 id="city"
+                 name="citee"
+                 ng-model="formModel.city"
+                 required="required"
+                 ng-pattern="/^[A-Za-z]{1,32}$/"
+                 ng-minlength="7"
+                 ng-pattern-err-type="badCityName"
+             ><br>
+        </div>
+
+        <div class="form-group" >
+          <label for="prov" >Prov</label >
+          <input type="text"
+                 class="form-control"
+                 id="prov" name="prov"
+                 ng-model="formModel.prov"
+                 ng-minlength="7"
+                 required="required"><br>
+        </div>
+
+        <div class="form-group" >
+          <label for="age" >Age</label >
+          <input type="number" class="form-control" id="prov"
+                 name="age"
+                 min=5
+                 max=13
+                 ng-min-err-type="tooYoung"
+                 ng-max-err-type="tooOld"
+                 ng-model="formModel.age"
+                 required="required"><br>
+        </div>
+        <div class="form-group" >
+          <label class="radio-inline">
+            <input id="sex" name="sex" type="radio" ng-model="formModel.sexy" value="yes">Yes
+          </label>
+          <label class="radio-inline">
+            <input id="sex" name="sex" type="radio" ng-model="formModel.sexy" value="no">No
+          </label>
+          <label class="radio-inline">
+            <input id="sex" name="sex" type="radio" ng-model="formModel.sexy" value="other">Other
+          </label>
+        </div>
+
+        <button class="btn btn-primary">Submit SVP!</button><hr>
+
+        MyModel data (data appears as typed): <pre> {{ formModel | json }}</pre>
+        TheForm data: <pre> {{ theForm | json }}</pre>
+      </form>
+
+      <script>
+        var app = angular.module('joeApp', ['jcs-autoValidate']);
+
+        app.run(function (defaultErrorMessageResolver) {
+            defaultErrorMessageResolver.getErrorMessages().then(function (errorMessages) {
+              errorMessages['tooYoung'] = 'You must be at least {0} years old to use this site';
+              errorMessages['tooOld'] = 'You must be max {0} years old to use this site';
+              errorMessages['badCityName'] = 'The city name should only contain letters.';
+            });
+          }
+        );
+
+        app.controller('joeCtrl', function ($scope) {
+          $scope.formModel = {};
+
+          $scope.onSubmit = function () {
+              console.log("The submit was successfully done.");
+              console.log($scope.formModel);
+            };
+        });
+      </script>
+    </div>
+  </div>
+  </body>
+
+</html>

@@ -20,7 +20,7 @@ A list of AngularJS snippets I have written, to help me learn
 * Romeo   -
 * Sierra  - This will cover services.
 * Tango   - Task Application
-* Uniform -
+* Uniform - All about uniForms.
 * Victor  -
 * Whiskey -
 * Xray    -

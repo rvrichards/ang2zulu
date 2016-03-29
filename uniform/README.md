@@ -23,7 +23,13 @@ HTML Form with Angular using ng-submit
 HTML Form with Angular ng-click using $http
 
 ##gid.html
-Bootstrap Things, in prep for form validation --- WIP
+Bootstrap Things.
 
 ##hal.html
-Form Validation with ng-class --- WIP
+Form Validation using Angular
+
+##index.html
+Basic AngularJS form submit, using ng-submit.
+
+##joe.html
+Validation using open-source angular-auto-validate.

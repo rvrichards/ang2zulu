@@ -2,27 +2,45 @@
 <html  ng-app="galApp">
   <head>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
   </head>
   <body>
+  <div class="container">
 
     <h1>Bootstrap Things </h1>
     <p>This is a an Angularized HTML form, the basics won't be listed, just the new stuff. When we start to use for validation, we'll be using bootstrap classes to to the highlighting. So we'll add bootstrap</p>
     <ul>
-      <li></li>
-      <li></li>
+      <li>We link to bootstrap - maxcdn.</li>
+      <li>Proper form classes used: form-control and form-group. </li>
+      <li>"form-inline" to save space. </li>
     </ul>
 
     <div ng-controller="galCtrl">
 
-      <form name="theForm" novalidate="novalidate">
-        <div ng-class>
-          City: <input type="text" id="city" name="citee" ng-model="formModel.myCity" required="required"><br>
+      <form name="theForm" novalidate="novalidate" class="form-inline" >
+        <div class="form-group" >
+          <label for="city" >City</label >
+          <input type="text" class="form-control" id="city" name="citee"
+                 ng-model="formModel.city" required="required"><br>
         </div>
-        Prov: <input type="text" id="prov" ng-model="formModel.myProv" ><br>
-        Sex:  <input type="radio" id="sex" ng-model="formModel.sexy" value="yea" ng-checked="true" > Yes
-              <input type="radio" id="sex" ng-model="formModel.sexy" value="no"> No
-              <input type="radio" id="sex" ng-model="formModel.sexy" value="other"> Other<br>
-        <button ng-click="onSubmit(theForm.$valid)">Submit SVP! </button ><br>
+        <div class="form-group" >
+          <label for="prov" >Prov</label >
+          <input type="text" class="form-control" id="prov" name="prov"
+                 ng-model="formModel.prov" required="required"><br>
+        </div>
+        <div class="form-group" >
+          <label class="radio-inline">
+            <input id="sex" name="sex" type="radio" ng-model="formModel.sexy" value="yes">Yes
+          </label>
+          <label class="radio-inline">
+            <input id="sex" name="sex" type="radio" ng-model="formModel.sexy" value="no">No
+          </label>
+          <label class="radio-inline">
+            <input id="sex" name="sex" type="radio" ng-model="formModel.sexy" value="other">Other
+          </label>
+        </div>
+
+        <button class="btn btn-primary" ng-click="onSubmit()">Submit SVP!</button><hr>
         MyModel data (data appears as typed): <pre> {{ formModel | json }}</pre>
         TheForm data: <pre> {{ theForm | json }}</pre>
       </form>
@@ -34,18 +52,13 @@
           $scope.formModel = {};
 
           $scope.onSubmit = function (valid) {
-            if (valid) {
               console.log("The submit was successfully done.");
               console.log($scope.formModel);
-            } else {
-              console.log("Cannot submit, not valid.");
-            }
-
             };
         });
       </script>
     </div>
-
+  </div>
   </body>
 
 </html>
